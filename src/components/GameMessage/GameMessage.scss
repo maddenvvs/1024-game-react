@@ -1,0 +1,58 @@
+@import "styles/_shared";
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.game-message {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(238, 228, 218, 0.9);
+  z-index: 1;
+  padding-top: 200px;
+  text-align: center;
+  animation: fade-in 1200ms;
+  animation-fill-mode: both;
+
+  @media screen and (max-width: $breakpoint-s) {
+    padding-top: 100px;
+  }
+
+  .message-title {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1;
+
+    @media screen and (max-width: $breakpoint-s) {
+      font-size: 40px;
+    }
+  }
+
+  .lower {
+    display: block;
+    margin-top: 29px;
+  }
+
+  .simple-button + .simple-button {
+    margin-left: 1em;
+  }
+
+  &.game-won {
+    background: rgba(237, 194, 46, 0.7);
+  }
+}
+
+.game-won,
+.game-over {
+  display: block;
+}

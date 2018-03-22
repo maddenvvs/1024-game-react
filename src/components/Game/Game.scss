@@ -1,0 +1,20 @@
+@import "styles/_shared";
+
+.game-container {
+  margin-top: 40px;
+  position: relative;
+  padding: 15px;
+  cursor: default;
+  touch-action: none;
+  background: darken(#bbada0, 5%);
+  border-radius: 6px;
+  width: 500px;
+  height: 500px;
+
+  @media screen and (max-width: $breakpoint-s) {
+    width: 280px;
+    height: 280px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+}

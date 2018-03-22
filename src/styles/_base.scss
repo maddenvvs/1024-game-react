@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: lighten(#faf8ef, 1%);
+  color: darken(#776e65, 5%);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 100%;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.65;
+}
+
+strong.important {
+  text-transform: uppercase;
+}

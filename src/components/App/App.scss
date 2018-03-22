@@ -1,0 +1,19 @@
+@import "styles/_shared";
+
+.container {
+  width: 500px;
+  margin: 5rem auto 0;
+
+  @media screen and (max-width: $breakpoint-s) {
+    width: 280px;
+    margin-top: 1rem;
+  }
+}
+
+.game-explanation {
+  margin-top: 48px;
+
+  @media screen and (max-width: $breakpoint-s) {
+    margin-top: 20px;
+  }
+}

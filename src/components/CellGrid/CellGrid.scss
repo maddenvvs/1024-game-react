@@ -1,0 +1,32 @@
+@import "styles/_shared";
+
+.cell-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell-row {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: $breakpoint-s) {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cell {
+  width: $cell-width;
+  height: $cell-width;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35);
+
+  @media screen and (max-width: $breakpoint-s) {
+    width: $cell-width-small;
+    height: $cell-width-small;
+  }
+}

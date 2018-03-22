@@ -1,0 +1,14 @@
+@import "styles/_shared";
+
+.simple-button {
+  font-size: 1em;
+  background: #8f7a66;
+  border: none;
+  border-radius: 3px;
+  padding: 0 1.2em;
+  color: $main-white-color;
+  line-height: 2.5;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+}

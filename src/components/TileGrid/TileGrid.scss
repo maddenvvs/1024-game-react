@@ -1,0 +1,178 @@
+@import "styles/_shared";
+
+$tile-colors: #eee4da #ede0c8 #f2b179 #f59563 #f67c5f #f65e3b #edcf72 #edcc61
+  #edc850 #edc53f #edc22e;
+
+@for $i from 1 to 12 {
+  $tile-colors: set-nth(
+    $list: $tile-colors,
+    $n: $i,
+    $value: darken(nth($list: $tile-colors, $n: $i), 5%)
+  );
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tile {
+  position: absolute;
+  transition: 200ms ease-in-out;
+  transition-property: transform;
+
+  &-inner {
+    width: $cell-width;
+    height: $cell-width;
+    line-height: $cell-width;
+    border-radius: 3px;
+    background: #eee4da;
+    text-align: center;
+    font-weight: bold;
+    font-size: 55px;
+
+    @media screen and (max-width: $breakpoint-s) {
+      width: $cell-width-small;
+      height: $cell-width-small;
+      line-height: $cell-width-small;
+      font-size: 35px;
+    }
+  }
+
+  &__new .tile-inner {
+    animation: appear 200ms ease 100ms;
+    animation-fill-mode: backwards;
+  }
+
+  &__merged .tile-inner {
+    animation: pop 200ms ease 100ms;
+    animation-fill-mode: backwards;
+  }
+
+  &__2 .tile-inner {
+    background: nth($list: $tile-colors, $n: 1);
+  }
+
+  &__4 .tile-inner {
+    background: nth($list: $tile-colors, $n: 2);
+  }
+
+  &__8 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 3);
+  }
+
+  &__16 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 4);
+  }
+
+  &__32 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 5);
+  }
+
+  &__64 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 6);
+  }
+
+  &__128 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 7);
+    font-size: 45px;
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    &__128 .tile-inner {
+      font-size: 25px;
+    }
+  }
+
+  &__256 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 8);
+    font-size: 45px;
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    &__256 .tile-inner {
+      font-size: 25px;
+    }
+  }
+
+  &__512 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 9);
+    font-size: 45px;
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    &__512 .tile-inner {
+      font-size: 25px;
+    }
+  }
+
+  &__1024 .tile-inner {
+    color: $main-white-color;
+    background: nth($list: $tile-colors, $n: 10);
+    font-size: 35px;
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    &__1024 .tile-inner {
+      font-size: 15px;
+    }
+  }
+
+  &__super .tile-inner {
+    color: $main-white-color;
+    background: #3c3a32;
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    &__super .tile-inner {
+      font-size: 10px;
+    }
+  }
+
+  @for $x from 0 to $board-size {
+    @for $y from 0 to $board-size {
+      &__position-#{$x + 1}-#{$y + 1} {
+        transform: translate(121px * $x, 121px * $y);
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    @for $x from 0 to $board-size {
+      @for $y from 0 to $board-size {
+        &__position-#{$x + 1}-#{$y + 1} {
+          transform: translate(67.5px * $x, 67.5px * $y);
+        }
+      }
+    }
+  }
+}

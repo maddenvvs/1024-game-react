@@ -1,0 +1,49 @@
+@import "styles/_shared";
+
+.score-container {
+  position: relative;
+  background: darken(#bbada0, 5%);
+  padding: 0.5em;
+  font-size: 1.5em;
+  border-radius: 3px;
+  color: $main-white-color;
+  text-align: center;
+}
+
+.score-name {
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 1.2;
+  text-align: center;
+  color: #eee4da;
+}
+
+.score-value {
+  text-align: center;
+  line-height: 1;
+  font-weight: bold;
+}
+
+@keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+.score-addition {
+  position: absolute;
+  right: 30px;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  color: rgba(119, 110, 101, 0.9);
+  z-index: 1;
+  animation: move-up 600ms ease-in;
+  animation-fill-mode: both;
+}
